@@ -42,7 +42,7 @@ export default async function Products() {
               </div>
               <div>
                 <Link
-                  href={`/services/${item._id}`}
+                  href={`/products/${item._id}`}
                   className="text-orange-500"
                 >
                   <FaArrowRight />
