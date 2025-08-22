@@ -7,7 +7,7 @@ export default async function AddProductPage() {
   // if (!session) {
   //   redirect("/login"); // Redirect unauthenticated users
   // }
-
+ 
   // Render form
   return (
     <div className="max-w-lg mx-auto bg-base-100 shadow-md rounded-lg p-6">
