@@ -16,7 +16,7 @@ export default function Navbar() {
                 </li>{" "}
 
                 <li>
-                    <Link href={"/my-bookings"}>My Bookings</Link>
+                    <Link href={"/my-dashboard"}>Dashboard</Link>
                 </li>
                 <li>
                     <Link href={"/about"}>About</Link>
