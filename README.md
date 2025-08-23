@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌿 Plant Shop (Next.js + MongoDB)
 
-## Getting Started
+A simple plant shop application built with **Next.js (App Router)** and **MongoDB**.  
+Users can browse plant products, view details, and (if authenticated) add new plants to the database.
 
-First, run the development server:
+---
+
+## 🚀 Features
+- Landing page with product listings.
+- Product details page.
+- Admin/Product management page (protected).
+- Add new plant form with image, price, description, and stock.
+- MongoDB integration for storing plant data.
+
+---
+
+## 🛠️ Setup & Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/plant-shop.git
+   cd plant-shop
+
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup environment variables
+
+Create a `.env` file in the root directory:
+
+```
+MONGO_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_random_secret
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Route Summary
 
-## Learn More
+### Public Routes
 
-To learn more about Next.js, take a look at the following resources:
+| Route           | Method   | Description         |
+| --------------- | -------- | ------------------- |
+| `/`             | GET      | Home page           |
+| `/products`     | GET      | List all products   |
+| `/products/:id` | GET      | Product detail page |
+| `/login`        | GET/POST | Login page          |
+| `/register`     | GET/POST | Registration page   |
+| `/about`        | GET      | About page          |
+| `/contact`      | GET      | Contact page        |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Protected Routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Route                    | Method   | Description                           |
+| ------------------------ | -------- | ------------------------------------- |
+| `/dashboard/add-product` | GET/POST | Add new product (authenticated users) |
 
-## Deploy on Vercel
+### API Routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Route           | Method  | Description                    |
+| --------------- | ------- | ------------------------------ |
+| `/api/products` | POST    | Add a new product              |
+| `/api/auth/...` | Various | NextAuth authentication routes |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+---
+
+## Tech Stack
+
+* **Frontend:** Next.js 15, React, TailwindCSS
+* **Backend:** Next.js App Router API, Node.js
+* **Database:** MongoDB
+* **Authentication:** NextAuth.js
+
+---
+
+## Notes
+
+* Ensure your MongoDB database is running and accessible via URI.
+* This project uses **FormData** for adding products. For file uploads, integrate `imgbb` or another storage service.
+* Dark/Light mode toggle is available in the navbar.
+* Admin users can manage products via protected routes.
+
+---
+
+## License
+
+MIT License
